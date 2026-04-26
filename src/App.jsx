@@ -1,7 +1,11 @@
 import './App.css';
-
+import Header from './components/ui/Header';
 function App() {
-  return <div className='text'>Pohoda</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
