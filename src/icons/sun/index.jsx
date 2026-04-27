@@ -1,8 +1,8 @@
 import { DEFAULT_ICON_SIZE } from '@/constants';
 import { CloudSun } from 'lucide-react';
 
-const Sun = () => {
-  return <CloudSun size={DEFAULT_ICON_SIZE} className='text-orange-500 mr-2' />;
+const SunIcon = ({ size = DEFAULT_ICON_SIZE, ...props }) => {
+  return <CloudSun size={size} className='text-icon-primary' {...props} />;
 };
 
-export default Sun;
+export default SunIcon;
