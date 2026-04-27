@@ -1,10 +1,11 @@
-import './App.css'
-
+import './App.css';
+import Header from '@/components/header';
 function App() {
-
   return (
-    <div className="text">Pohoda</div>
-  )
+    <div>
+      <Header />
+    </div>
+  );
 }
 
-export default App
+export default App;
