@@ -7,10 +7,10 @@ import SunIcon from '@/icons/sun';
 
 const header = () => {
   return (
-    <NavigationMenu className='bg-header px-6 py-4 max-w-none w-full justify-start'>
+    <NavigationMenu className='bg-background px-6 py-4 max-w-none w-full justify-start'>
       <NavigationMenuList>
         <NavigationMenuItem className='flex items-center '>
-          <SunIcon className='text-icon-primary mr-2' />
+          <SunIcon className=' mr-2 text-foreground' />
           <h1 className='text-foreground font-bold text-2xl'>Pohoda</h1>
         </NavigationMenuItem>
       </NavigationMenuList>
