@@ -1,18 +1,8 @@
 import './App.css';
-import Header from '@/components/header';
-import { SidebarProvider } from '@/components/ui/sidebar';
-import { AppSidebar } from './components/sidebar';
+import MainLayout from '@/components/layout/main-layout';
 
 function App() {
-  return (
-    <SidebarProvider>
-      <AppSidebar />
-      <main className='flex-1 flex flex-col'>
-        <Header />
-        <div className='flex-1 p-4'></div>
-      </main>
-    </SidebarProvider>
-  );
+  return <MainLayout></MainLayout>;
 }
 
 export default App;

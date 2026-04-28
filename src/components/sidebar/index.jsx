@@ -11,7 +11,7 @@ import SunIcon from '@/icons/sun';
 export const AppSidebar = () => {
   return (
     <Sidebar>
-      <SidebarHeader className='items-center px-6 py-4'>
+      <SidebarHeader className='flex items-center px-6 py-4'>
         <SunIcon className='text-foreground' />
       </SidebarHeader>
       <SidebarContent>
