@@ -1,4 +1,3 @@
-import '@/app/App.css';
 import Layout from '@/app/layout';
 
 function App() {

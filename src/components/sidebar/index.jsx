@@ -6,6 +6,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
 } from '@/components/ui/sidebar';
+import { TOOLTIP } from '@/constants';
 import SunIcon from '@/icons/sun';
 import HomeIcon from '@/icons/home';
 import WidgetIcon from '@/icons/widget';
@@ -25,21 +26,21 @@ export const AppSidebar = () => {
       <SidebarContent>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip='Home'>
+            <SidebarMenuButton tooltip={TOOLTIP.HOME}>
               <HomeIcon />
-              <span>Home</span>
+              <span>{TOOLTIP.HOME}</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip='Widget'>
+            <SidebarMenuButton tooltip={TOOLTIP.WIDGET}>
               <WidgetIcon />
-              <span>Widget</span>
+              <span>{TOOLTIP.WIDGET}</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip='Settings'>
+            <SidebarMenuButton tooltip={TOOLTIP.SETTINGS}>
               <SettingsIcon />
-              <span>Settings</span>
+              <span>{TOOLTIP.SETTINGS}</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
