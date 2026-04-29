@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Sidebar,
   SidebarContent,
@@ -9,7 +10,7 @@ import {
 import { TOOLTIP } from './constants';
 import SunIcon from '@/icons/sun';
 import HomeIcon from '@/icons/home';
-import WidgetIcon from '@/icons/widget';
+import WidgetsIcon from '@/icons/widgets';
 import SettingsIcon from '@/icons/settings';
 
 export const AppSidebar = () => {
@@ -26,21 +27,27 @@ export const AppSidebar = () => {
       <SidebarContent>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip={TOOLTIP.HOME}>
-              <HomeIcon />
-              <span>{TOOLTIP.HOME}</span>
+            <SidebarMenuButton asChild tooltip={TOOLTIP.HOME}>
+              <Link to='/'>
+                <HomeIcon />
+                <span>{TOOLTIP.HOME}</span>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip={TOOLTIP.WIDGET}>
-              <WidgetIcon />
-              <span>{TOOLTIP.WIDGET}</span>
+            <SidebarMenuButton asChild tooltip={TOOLTIP.WIDGETS}>
+              <Link to='/widgets'>
+                <WidgetsIcon />
+                <span>{TOOLTIP.WIDGETS}</span>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip={TOOLTIP.SETTINGS}>
-              <SettingsIcon />
-              <span>{TOOLTIP.SETTINGS}</span>
+            <SidebarMenuButton asChild tooltip={TOOLTIP.SETTINGS}>
+              <Link to='/settings'>
+                <SettingsIcon />
+                <span>{TOOLTIP.SETTINGS}</span>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

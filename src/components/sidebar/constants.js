@@ -1,5 +1,5 @@
 export const TOOLTIP = {
   HOME: 'Home',
-  WIDGET: 'Widget',
+  WIDGETS: 'Widgets',
   SETTINGS: 'Settings',
 };
