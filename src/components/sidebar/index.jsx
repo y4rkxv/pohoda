@@ -6,7 +6,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
 } from '@/components/ui/sidebar';
-import { TOOLTIP } from '@/constants';
+import { TOOLTIP } from './constants';
 import SunIcon from '@/icons/sun';
 import HomeIcon from '@/icons/home';
 import WidgetIcon from '@/icons/widget';
