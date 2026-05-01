@@ -1,15 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
-import { getWeather } from '@/api';
+import { useWeather } from '@/hooks/use-weather';
+import { formatTemperature } from '@/helpers/format-temperature';
 
 const Home = () => {
-  const {
-    data: weather,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ['weather', 'Dnipro'],
-    queryFn: () => getWeather('Dnipro'),
-  });
+  const { data: weather, isLoading, error } = useWeather('Dnipro');
+
   return (
     <div>
       <h1 className='text-2xl font-bold'>Main page</h1>
@@ -18,7 +12,7 @@ const Home = () => {
       {weather && (
         <div>
           <p>City: {weather.name}</p>
-          <p>Temperature: {Math.round(weather.main.temp)}°C</p>
+          <p>Temperature: {formatTemperature(weather.main.temp)}°C</p>
         </div>
       )}
     </div>
