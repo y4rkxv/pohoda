@@ -8,7 +8,7 @@ import {
   SidebarMenuButton,
 } from '@/components/ui/sidebar';
 import { TOOLTIP } from './constants';
-import SunIcon from '@/icons/sun';
+import CloudSunIcon from '@/icons/cloud-sun';
 import HomeIcon from '@/icons/home';
 import WidgetsIcon from '@/icons/widgets';
 import SettingsIcon from '@/icons/settings';
@@ -18,7 +18,7 @@ export const AppSidebar = () => {
     <Sidebar collapsible='icon'>
       <SidebarHeader>
         <div className='flex items-center gap-2 px-2 py-1 group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:justify-center'>
-          <SunIcon />
+          <CloudSunIcon />
           <h1 className='text-foreground font-bold text-xl group-data-[collapsible=icon]:hidden'>
             Pohoda
           </h1>
