@@ -14,8 +14,7 @@ import {
 import { Thermometer, Sunrise, Sunset } from 'lucide-react';
 import { formatTemperature } from '@/helpers/format-temperature';
 import { formatCityTime } from '@/pages/home/helpers';
-
-const WEATHER_ICON_SIZE = 32;
+import { WEATHER_ICON_SIZE } from '@/constants';
 
 export const WeatherOverview = ({
   weather,

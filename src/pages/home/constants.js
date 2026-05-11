@@ -29,3 +29,6 @@ export const iconMap = {
 };
 
 export const FALLBACK_ICON = CloudIcon;
+
+export const TOOLTIP_DELAY = 150;
+export const DEFAULT_CITY = 'Dnipro';

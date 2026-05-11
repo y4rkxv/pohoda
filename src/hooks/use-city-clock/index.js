@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { formatCityTime } from '@/pages/home/helpers';
-
-const MS_PER_MINUTE = 60_000;
+import { MS_PER_MINUTE } from '@/constants';
 
 export const useCityClock = tzOffset => {
   const [now, setNow] = useState(() => Date.now());

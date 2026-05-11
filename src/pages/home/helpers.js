@@ -1,6 +1,4 @@
-const MS_PER_SECOND = 1000;
-const TIME_PAD_LENGTH = 2;
-const TIME_PAD_CHAR = '0';
+import { MS_PER_SECOND, TIME_PAD_LENGTH, TIME_PAD_CHAR } from '@/constants';
 
 export const formatCityTime = (unix, tzOffset = 0) => {
   const d = new Date((unix + tzOffset) * MS_PER_SECOND);

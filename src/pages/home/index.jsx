@@ -4,11 +4,9 @@ import { HomeSkeleton } from '@/components/home-skeleton';
 import { HomeError } from '@/components/home-error';
 import { WeatherOverview } from '@/components/weather-overview';
 import { WeatherStats } from '@/components/weather-stats';
-import { iconMap, FALLBACK_ICON } from './icon-map';
+import { iconMap, FALLBACK_ICON } from './constants';
 import { TooltipProvider } from '@/components/ui/tooltip';
-
-const TOOLTIP_DELAY = 150;
-const DEFAULT_CITY = 'Dnipro';
+import { TOOLTIP_DELAY, DEFAULT_CITY } from './constants';
 
 const Home = () => {
   const { data: weather, isLoading, error } = useWeather(DEFAULT_CITY);
