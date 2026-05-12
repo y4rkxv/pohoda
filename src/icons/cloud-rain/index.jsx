@@ -1,4 +1,4 @@
-import { DEFAULT_ICON_SIZE } from '@/constants';
+import { DEFAULT_ICON_SIZE } from '@/icons/constants';
 import { CloudRain } from 'lucide-react';
 
 const CloudRainIcon = ({ size = DEFAULT_ICON_SIZE, ...props }) => {

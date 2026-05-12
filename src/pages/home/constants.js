@@ -32,3 +32,6 @@ export const FALLBACK_ICON = CloudIcon;
 
 export const TOOLTIP_DELAY = 150;
 export const DEFAULT_CITY = 'Dnipro';
+export const MS_PER_SECOND = 1000;
+export const TIME_PAD_LENGTH = 2;
+export const TIME_PAD_CHAR = '0';

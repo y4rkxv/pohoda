@@ -1,0 +1,2 @@
+export const METERS_PER_KILOMETER = 1000;
+export const VISIBILITY_DECIMALS = 1;

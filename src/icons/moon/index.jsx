@@ -1,4 +1,4 @@
-import { DEFAULT_ICON_SIZE } from '@/constants';
+import { DEFAULT_ICON_SIZE } from '@/icons/constants';
 import { Moon } from 'lucide-react';
 
 const MoonIcon = ({ size = DEFAULT_ICON_SIZE, ...props }) => {

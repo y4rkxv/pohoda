@@ -1,4 +1,4 @@
-import { MS_PER_SECOND, TIME_PAD_LENGTH, TIME_PAD_CHAR } from '@/constants';
+import { MS_PER_SECOND, TIME_PAD_LENGTH, TIME_PAD_CHAR } from '@/pages/home/constants';
 
 export const formatCityTime = (unix, tzOffset = 0) => {
   const d = new Date((unix + tzOffset) * MS_PER_SECOND);

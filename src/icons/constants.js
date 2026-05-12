@@ -1,0 +1,1 @@
+export const DEFAULT_ICON_SIZE = 24; // або 32, залежно від того, що там було раніше

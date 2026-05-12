@@ -1,4 +1,4 @@
-import { DEFAULT_ICON_SIZE } from '@/constants';
+import { DEFAULT_ICON_SIZE } from '@/icons/constants';
 import { Sun } from 'lucide-react';
 
 const SunIcon = ({ size = DEFAULT_ICON_SIZE, ...props }) => {
