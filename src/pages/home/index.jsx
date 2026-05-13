@@ -6,6 +6,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { TOOLTIP_DELAY } from '@/pages/home/constants';
 import { useHome } from './use-home'; 
 
+
 const Home = () => {
   const { 
     weather, 
@@ -16,11 +17,12 @@ const Home = () => {
     WeatherIcon, 
     tz 
   } = useHome();
+  const isWeatherMissing = !weather;
   return isLoading ? (
     <HomeSkeleton />
   ) : error ? (
     <HomeError message={error.message} />
-  ) : !weather ? null : (
+  ) : isWeatherMissing ? null : (
     <TooltipProvider delayDuration={TOOLTIP_DELAY}>
       <div className='space-y-6'>
         <WeatherOverview 

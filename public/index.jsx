@@ -1,4 +1,6 @@
+import { Cloudy, Droplets, Eye, Gauge, Wind } from 'lucide-react';
 import { StatCard } from '@/components/stat-card';
+import { METERS_PER_KILOMETER, VISIBILITY_DECIMALS } from './constants';
 import { getStatsConfig } from './helpers'
 
 export const WeatherStats = ({ weather }) => {
