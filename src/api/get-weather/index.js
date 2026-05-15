@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_URL, API_KEY } from '@/api/constants';
+import { BASE_URL, API_KEY } from '@/api/get-weather/constants';
 
 export const getWeather = async city => {
   const response = await axios.get(`${BASE_URL}/weather`, {
