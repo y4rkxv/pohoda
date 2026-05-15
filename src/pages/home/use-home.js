@@ -11,6 +11,7 @@ export const useHome = () => {
     ? (iconMap[condition.icon] ?? FALLBACK_ICON) 
     : null;
   const tz = weather?.timezone;
+  const isWeatherMissing = !weather && !isLoading && !error;
 
   return {
     weather,
@@ -19,6 +20,7 @@ export const useHome = () => {
     cityTime,
     condition,
     WeatherIcon,
-    tz
+    tz,
+    isWeatherMissing
   };
 };
