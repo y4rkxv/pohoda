@@ -27,7 +27,11 @@ export const AppSidebar = () => {
       <SidebarContent>
         <SidebarMenu className='px-2 group-data-[collapsible=icon]:px-0'>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip={TOOLTIP.HOME}>
+            <SidebarMenuButton 
+              asChild 
+              tooltip={TOOLTIP.HOME}
+              className="group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center"
+            >
               <Link to='/'>
                 <HomeIcon />
                 <span>{TOOLTIP.HOME}</span>
@@ -35,7 +39,11 @@ export const AppSidebar = () => {
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip={TOOLTIP.WIDGETS}>
+            <SidebarMenuButton 
+              asChild 
+              tooltip={TOOLTIP.WIDGETS}
+              className="group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center"
+            >
               <Link to='/widgets'>
                 <WidgetsIcon />
                 <span>{TOOLTIP.WIDGETS}</span>
@@ -43,7 +51,11 @@ export const AppSidebar = () => {
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip={TOOLTIP.SETTINGS}>
+            <SidebarMenuButton 
+              asChild 
+              tooltip={TOOLTIP.SETTINGS}
+              className="group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center"
+            >
               <Link to='/settings'>
                 <SettingsIcon />
                 <span>{TOOLTIP.SETTINGS}</span>
