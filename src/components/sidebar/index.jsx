@@ -17,7 +17,7 @@ export const AppSidebar = () => {
   return (
     <Sidebar collapsible='icon'>
       <SidebarHeader>
-        <div className='flex items-center gap-2 px-2 py-1 group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:justify-center'>
+        <div className='flex items-center justify-center gap-2 px-2 py-1 group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:justify-center'>
           <CloudSunIcon />
           <h1 className='text-foreground font-bold text-xl group-data-[collapsible=icon]:hidden'>
             Pohoda
@@ -25,9 +25,13 @@ export const AppSidebar = () => {
         </div>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarMenu>
+        <SidebarMenu className='px-2 group-data-[collapsible=icon]:px-0'>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip={TOOLTIP.HOME}>
+            <SidebarMenuButton 
+              asChild 
+              tooltip={TOOLTIP.HOME}
+              className="group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center"
+            >
               <Link to='/'>
                 <HomeIcon />
                 <span>{TOOLTIP.HOME}</span>
@@ -35,7 +39,11 @@ export const AppSidebar = () => {
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip={TOOLTIP.WIDGETS}>
+            <SidebarMenuButton 
+              asChild 
+              tooltip={TOOLTIP.WIDGETS}
+              className="group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center"
+            >
               <Link to='/widgets'>
                 <WidgetsIcon />
                 <span>{TOOLTIP.WIDGETS}</span>
@@ -43,7 +51,11 @@ export const AppSidebar = () => {
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip={TOOLTIP.SETTINGS}>
+            <SidebarMenuButton 
+              asChild 
+              tooltip={TOOLTIP.SETTINGS}
+              className="group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center"
+            >
               <Link to='/settings'>
                 <SettingsIcon />
                 <span>{TOOLTIP.SETTINGS}</span>
