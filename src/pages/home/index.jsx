@@ -5,7 +5,7 @@ import { WeatherStats } from '@/components/weather-stats';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { TOOLTIP_DELAY } from '@/pages/home/constants';
 import { useHome } from './use-home'; 
-
+import SearchCity from '@/components/search-city'; 
 
 const Home = () => {
   const { 
@@ -15,9 +15,19 @@ const Home = () => {
     cityTime, 
     condition, 
     WeatherIcon, 
-    tz 
+    tz,
+    setCity 
   } = useHome();
+
+  const handleSearchCity = (cityName) => {
+    console.log("Search for a city:", cityName);
+    if (setCity) {
+      setCity(cityName); 
+    }
+  };
+
   const isWeatherMissing = !weather;
+
   return isLoading ? (
     <HomeSkeleton />
   ) : error ? (
@@ -25,6 +35,8 @@ const Home = () => {
   ) : isWeatherMissing ? null : (
     <TooltipProvider delayDuration={TOOLTIP_DELAY}>
       <div className='space-y-6'>
+        <SearchCity placeholder="Search for a city..." onSearch={handleSearchCity} />
+        
         <WeatherOverview 
           weather={weather} 
           condition={condition} 
