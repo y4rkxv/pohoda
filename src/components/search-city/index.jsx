@@ -8,8 +8,8 @@ const SearchCity = ({ placeholder, onSearch }) => {
     e.preventDefault();
     
     if (inputValue.trim()) {
-      onSearch(inputValue.trim()); // Передаємо чисте значення наверх
-      setInputValue(''); // Очищаємо інпут після відправки
+      onSearch(inputValue.trim()); 
+      setInputValue(''); 
     }
   };
 

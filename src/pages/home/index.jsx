@@ -1,53 +1,30 @@
-import { HomeSkeleton } from '@/components/home-skeleton';
-import { HomeError } from '@/components/home-error';
-import { WeatherOverview } from '@/components/weather-overview';
-import { WeatherStats } from '@/components/weather-stats';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { TOOLTIP_DELAY } from '@/pages/home/constants';
 import { useHome } from './use-home'; 
 import SearchCity from '@/components/search-city'; 
+import { WeatherCard } from '@/components/weather-card';
+
 
 const Home = () => {
-  const { 
-    weather, 
-    isLoading, 
-    error, 
-    cityTime, 
-    condition, 
-    WeatherIcon, 
-    tz,
-    setCity 
-  } = useHome();
+  const { cities, addCity } = useHome();
 
   const handleSearchCity = (cityName) => {
-    console.log("Search for a city:", cityName);
-    if (setCity) {
-      setCity(cityName); 
-    }
+    addCity(cityName);
   };
 
-  const isWeatherMissing = !weather;
-
-  return isLoading ? (
-    <HomeSkeleton />
-  ) : error ? (
-    <HomeError message={error.message} />
-  ) : isWeatherMissing ? null : (
+  return (
     <TooltipProvider delayDuration={TOOLTIP_DELAY}>
       <div className='space-y-6'>
         <SearchCity placeholder="Search for a city..." onSearch={handleSearchCity} />
         
-        <WeatherOverview 
-          weather={weather} 
-          condition={condition} 
-          WeatherIcon={WeatherIcon} 
-          cityTime={cityTime} 
-          tz={tz} 
-        />
-        <WeatherStats weather={weather} />
+        <div className="flex flex-col gap-4">
+          {cities.map((city) => (
+            <WeatherCard key={city} city={city} />
+          ))}
+        </div>
       </div>
     </TooltipProvider>
   );
 };
 
-export default Home;
+export default Home; 
