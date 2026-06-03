@@ -4,8 +4,7 @@ import { useHome } from './use-home';
 import SearchCity from '@/components/search-city'; 
 import { WeatherCard } from '@/components/weather-card';
 
-
-const Home = () => {
+export const Home = () => {
   const { cities, addCity } = useHome();
 
   const handleSearchCity = (cityName) => {
@@ -27,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;
