@@ -1,25 +1,16 @@
 import { useState, useEffect } from 'react';
+import { getStorageItem, setStorageItem } from './helpers';
 
 const LOCAL_STORAGE_KEY = 'pohoda_selected_cities';
 const DEFAULT_CITIES = ['Dnipro']; 
 
 export const useHome = () => {
-  const [cities, setCities] = useState(() => {
-    try {
-      const savedCities = localStorage.getItem(LOCAL_STORAGE_KEY);
-      return savedCities ? JSON.parse(savedCities) : DEFAULT_CITIES;
-    } catch (error) {
-      console.error('Error loading cities from localStorage:', error);
-      return DEFAULT_CITIES;
-    }
-  });
+  const [cities, setCities] = useState(() => 
+    getStorageItem(LOCAL_STORAGE_KEY, DEFAULT_CITIES)
+  );
 
   useEffect(() => {
-    try {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cities));
-    } catch (error) {
-      console.error('Error saving cities to localStorage:', error);
-    }
+    setStorageItem(LOCAL_STORAGE_KEY, cities);
   }, [cities]);
 
   const addCity = (cityName) => {
@@ -36,16 +27,9 @@ export const useHome = () => {
     });
   };
 
-  
-  const removeCity = (cityToRemove) => {
-    setCities((prevCities) => 
-      prevCities.filter((city) => city.toLowerCase() !== cityToRemove.toLowerCase())
-    );
-  };
 
   return {
     cities,
     addCity,
-    removeCity, 
   };
 };
