@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getStorageItem, setStorageItem } from './helpers';
+import { getStorageItem, setStorageItem } from '@/utils/local-storage';
 
 const LOCAL_STORAGE_KEY = 'pohoda_selected_cities';
 const DEFAULT_CITIES = ['Dnipro']; 
