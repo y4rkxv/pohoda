@@ -6,3 +6,4 @@ export const formatCityTime = (unix, tzOffset = 0) => {
   const mm = String(d.getUTCMinutes()).padStart(TIME_PAD_LENGTH, TIME_PAD_CHAR);
   return `${hh}:${mm}`;
 };
+

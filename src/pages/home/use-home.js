@@ -1,19 +1,35 @@
-import { useState } from 'react'; 
-import { DEFAULT_CITY } from '@/pages/home/constants';
+import { useState, useEffect } from 'react';
+import { getStorageItem, setStorageItem } from '@/utils/local-storage';
+
+const LOCAL_STORAGE_KEY = 'pohoda_selected_cities';
+const DEFAULT_CITIES = ['Dnipro']; 
 
 export const useHome = () => {
+  const [cities, setCities] = useState(() => 
+    getStorageItem(LOCAL_STORAGE_KEY, DEFAULT_CITIES)
+  );
 
-  const [cities, setCities] = useState([DEFAULT_CITY]);
+  useEffect(() => {
+    setStorageItem(LOCAL_STORAGE_KEY, cities);
+  }, [cities]);
 
-  const addCity = (newCity) => {
-    if (!cities.includes(newCity)) {
-      setCities([...cities, newCity]);
-    }
+  const addCity = (cityName) => {
+    const trimmedCity = cityName.trim();
+    if (!trimmedCity) return;
+
+    setCities((prevCities) => {
+      const cityExists = prevCities.some(
+        (city) => city.toLowerCase() === trimmedCity.toLowerCase()
+      );
+
+      if (cityExists) return prevCities; 
+      return [...prevCities, trimmedCity]; 
+    });
   };
 
 
   return {
     cities,
-    addCity
+    addCity,
   };
 };
